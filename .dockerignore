@@ -1,0 +1,11 @@
+.env
+.env.*
+venv/
+__pycache__/
+*.pyc
+.git
+.gitignore
+.dockerignore
+tempCodeRunnerFile.py
+.vscode/
+.idea/
