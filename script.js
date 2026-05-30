@@ -57,7 +57,7 @@ async function loadStock(symbol) {
     document.getElementById('tableBody').innerHTML = '<tr><td colspan="6" class="loading">Loading...</td></tr>';
 
     try {
-        const analyticsRes = await fetch(`http://127.0.0.1:8000/stocks/${symbol}/analytics`);
+        const analyticsRes = await fetch(`/stocks/${symbol}/analytics`);
         const analyticsData = await analyticsRes.json();
 
         if (analyticsData.detail) {
@@ -85,7 +85,7 @@ async function loadStock(symbol) {
         document.getElementById('percentChange').className = `change ${pct >= 0 ? 'positive' : 'negative'}`;
         document.getElementById('movingAvg').textContent = latest.moving_avg_7day ? `$${latest.moving_avg_7day}` : '--';
 
-        const stockRes = await fetch(`http://127.0.0.1:8000/stocks/${symbol}`);
+        const stockRes = await fetch(`/stocks/${symbol}`);
         const stockData = await stockRes.json();
 
         if (stockData.detail) {
